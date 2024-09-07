@@ -16,6 +16,7 @@
 		<!-- Header -->
 			<header id="header">
 				<div class="inner">
+					
 					<a href="#" class="image avatar"><img src="images/pic1.png" alt="" /></a>
 					<h2><strong style="color: rgb(34, 147, 115);">i am Uzma</strong>, a tech enthusiast and developer</h2>
 					<p style="font-size:14px;">
@@ -46,7 +47,7 @@
 				<!-- One -->
 					<section id="one">
 						<header class="major">
-							<h2>Hello and Welcome!!!<br />
+							<h2>Hello and Welcome!!! <br />
 								                      <!-- <i class="fa fa-cloud" style="color: #000000;"></i><i class="fa fa-cloud" style="color: #000000;"></i> -->
 							</h2>
 						</header>
@@ -281,8 +282,8 @@
 							<div id="msg"></div>
 						</div>
 					</section>
-
-				
+					
+					<p id="visitCount"></p>
 		<!-- Footer -->
 			<footer id="footer">
 				<div class="inner">
@@ -291,6 +292,7 @@
 						<li><a href="https://github.com/uzmahamid01" class="icon brands fa-github"><span class="label">Github</span></a></li>
 						<li><a href="uzma_hamid@tamu.edu" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
 					</ul>
+					
 					<ul class="copyright">
 						<li>&copy; Uzma Hamid | 2024</li>
 					</ul>
@@ -307,4 +309,27 @@
 			<script src="assets/js/contact.js"></script>
 
 	</body>
+	<script>
+		// Function to count visits
+		function countVisits() {
+			// Check if 'visits' exists in local storage
+			let visits = localStorage.getItem('visits');
+			
+			if (visits) {
+				visits = Number(visits) + 1; // Increment visits count
+			} else {
+				visits = 1; // First visit
+			}
+	
+			// Store the updated visits count back in local storage
+			localStorage.setItem('visits', visits);
+	
+			// Display the visits count on the page
+			document.getElementById('visitCount').innerText = visits;
+		}
+	
+		// Call the function when the page loads
+		window.onload = countVisits;
+	</script>
+	
 </html>
